@@ -4,7 +4,7 @@ use warnings;
 use strict;
 
 use vars qw($VERSION);
-$VERSION = '0.17';
+$VERSION = '0.18';
 
 #----------------------------------------------------------------------------
 
@@ -572,33 +572,24 @@ sub header {
     return 0;
 }
 
-#my $protocol = qr!(?:http|https|ftp|afs|news|nntp|mid|cid|mailto|wais|prospero|telnet|gopher)!;
-my $protocol = qr!(?:ftp|http|https|git)!;
-my $badproto = qr!(\w+)://!;
-my $proto    = qr!$protocol://(?:[\w]+:\w+@)?!;
-my $atom     = qr![a-z\d]!i;
-my $domain   = qr!((($atom(($atom|-)*$atom)?)\.)*([a-zA-Z](($atom|-)*$atom)?))!;
-my $ip       = qr!((\d+)(\.(\d+)){3})(:(\d+))?!;
-my $enc      = qr!%[a-fA-F\d]{2}!;
-my $legal1   = qr|[a-zA-Z\d\$\-_.+!*\'(),#]|;
-my $legal2   = qr![;:@&=]!;
-my $legal3   = qr!((($legal1|$enc)|$legal2)*)!;
-my $path     = qr!\/$legal3(\/$legal3)*!;
-my $query    = qr!\?$legal3!;
-my $urlregex = qr!(($proto)?($domain|$ip)(($path)?($query)?)?)!;
+sub _uri_split {
+     return $_[0] =~ m,(?:([^:/?#]+):)?(?://([^/?#]*))?([^?#]*)(?:\?([^#]*))?(?:#(.*))?,;
+}
 
 sub url {
     my ($self,$key,$value) = @_;
     if(defined $value) {
-        if($value && $value =~ /^$badproto$/) {
-            $self->_error( "Domain name required for a valid URL." );
+        my ($scheme, $auth, $path, $query, $frag) = _uri_split($value);
+
+        unless ( defined $scheme && length $scheme ) {
+            $self->_error( "'$value' for '$key' does not have a URL scheme" );
             return 0;
         }
-        if($value && $value =~ /^$badproto/ && $1 !~ $protocol) {
-            $self->_error( "Unknown protocol used in URL." );
+        unless ( defined $auth && length $auth ) {
+            $self->_error(  "'$value' for '$key' does not have a URL authority" );
             return 0;
         }
-        return 1    if($value && $value =~ /^$urlregex$/);
+        return 1;
     }
     $value ||= '';
     $self->_error( "'$value' for '$key' is not a valid URL." );
@@ -764,7 +755,7 @@ sub _error {
     push @{$self->{errors}}, $mess;
 }
 
-q( Currently Listening To: Rainbow - "Man On The Silver Mountain" from 'Outrage - Live in London 1981');
+q( Currently Listening To: Rainbow - "Long Live Rock 'n' Roll" from "Long Live Rock 'n' Roll" );
 
 __END__
 
@@ -797,7 +788,7 @@ for Miss Barbell Productions, L<http://www.missbarbell.co.uk>
 
 =head1 COPYRIGHT AND LICENSE
 
-  Copyright (C) 2007-2011 Barbie for Miss Barbell Productions
+  Copyright (C) 2007-2012 Barbie for Miss Barbell Productions
 
   This module is free software; you can redistribute it and/or
   modify it under the Artistic Licence v2.

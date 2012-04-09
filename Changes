@@ -1,7 +1,11 @@
 # Changes log for Test::CPAN::Meta::YAML
 
+0.18    09/04/2012
+	- RT#74317: imported url validation from CPAN::Meta (Alex Hartmaier).
+	- RT#66692: updated license type (Paul Howarth).
+
 0.17    13/02/2011
-        - Distribution name chang: Test-CPAN-Meta-YAML => Test-CPAN-Meta-YAML.
+        - Distribution name change: Test-YAML-Meta => Test-CPAN-Meta-YAML.
 
 0.16    12/04/2010
 	- fixed qr// delimiters due to issues with the NOT SIGN symbol 

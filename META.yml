@@ -1,11 +1,11 @@
 --- #YAML:1.0
 name:                     Test-CPAN-Meta-YAML
-version:                  0.17
+version:                  0.18
 abstract:                 A test module to validate a CPAN META.yml file.
 author:
   - Barbie <barbie@cpan.org>
 
-license:                  perl
+license:                  artistic_2
 distribution_type:        module
 installdirs:              site
 
@@ -27,10 +27,10 @@ build_requires:
 provides:
   Test::CPAN::Meta::YAML:
     file:     lib/Test/CPAN/Meta/YAML.pm
-    version:  0.17
+    version:  0.18
   Test::CPAN::Meta::YAML::Version:
     file:     lib/Test/CPAN/Meta/YAML/Version.pm
-    version:  0.17
+    version:  0.18
 no_index:
   directory:
     - t

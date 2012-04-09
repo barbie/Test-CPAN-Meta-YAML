@@ -4,7 +4,7 @@ use warnings;
 use strict;
 
 use vars qw($VERSION);
-$VERSION = '0.17';
+$VERSION = '0.18';
 
 #----------------------------------------------------------------------------
 
@@ -143,7 +143,7 @@ sub meta_spec_ok {
     }
 }
 
-q( Currently Listening To: Paul Menel - "She's Up On The Chair Again" from 'Three Sides To Every Story');
+q( Currently Listening To: Paul Menel - "Little Gorgeous Fool" from 'Three Sides To Every Story' );
 
 __END__
 
@@ -203,7 +203,7 @@ for Miss Barbell Productions, L<http://www.missbarbell.co.uk>
 
 =head1 COPYRIGHT AND LICENSE
 
-  Copyright (C) 2007-2011 Barbie for Miss Barbell Productions
+  Copyright (C) 2007-2012 Barbie for Miss Barbell Productions
 
   This module is free software; you can redistribute it and/or
   modify it under the Artistic Licence v2.
