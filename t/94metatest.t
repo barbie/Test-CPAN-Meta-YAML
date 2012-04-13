@@ -11,6 +11,7 @@ plan no_plan;
 
 my $yaml = meta_spec_ok(undef,undef,@_);
 
+use Test::CPAN::Meta::YAML;
 is($yaml->{version},$Test::CPAN::Meta::YAML::VERSION,
     'META.yml distribution version matches');
 
