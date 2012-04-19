@@ -1,5 +1,9 @@
 # Changes log for Test::CPAN::Meta::YAML
 
+0.20	19/04/2012
+	- further spelling fix. (Florian Schlichting).
+	- removed DSLIP info.
+
 0.19	17/04/2012
 	- RT#76611: spelling fix. (Florian Schlichting & Gregor Herrmann).
 
