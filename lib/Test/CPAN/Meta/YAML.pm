@@ -4,7 +4,7 @@ use warnings;
 use strict;
 
 use vars qw($VERSION);
-$VERSION = '0.20';
+$VERSION = '0.21';
 
 #----------------------------------------------------------------------------
 
@@ -64,7 +64,7 @@ A test module to validate a META.yml file.
 #----------------------------------------------------------------------------
 
 #############################################################################
-#Library Modules															#
+#Library Modules                                                            #
 #############################################################################
 
 use Test::Builder;
@@ -87,7 +87,7 @@ sub import {
 }
 
 #############################################################################
-#Interface Functions														#
+#Interface Functions                                                        #
 #############################################################################
 
 =head1 FUNCTIONS
@@ -115,7 +115,7 @@ and $version can be undefined.
 =cut
 
 sub meta_spec_ok {
-	my ($file, $vers, $msg) = @_;
+    my ($file, $vers, $msg) = @_;
     $file ||= 'META.yml';
 
     unless($msg) {
@@ -126,7 +126,7 @@ sub meta_spec_ok {
     if(my $yaml = yaml_file_ok($file)) {
         my %hash;
         $hash{spec} = $vers if($vers);
-        $hash{yaml} = $yaml;
+        $hash{data} = $yaml;
 
         my $spec = Test::CPAN::Meta::YAML::Version->new(%hash);
         if(my $result = $spec->parse()) {
@@ -158,14 +158,14 @@ There are currently 3 distributions to test META files:
   Test-CPAN-Meta-YAML
 
 All three have slightly different requirements and are intended to be used in
-slightly different environments. 
+slightly different environments.
 
-Test-CPAN-Meta-YAML requires a YAML parser, and currently looks for the YAML or 
+Test-CPAN-Meta-YAML requires a YAML parser, and currently looks for the YAML or
 YAML::Syck modules. This is the original variant of the 3 and was intended to
 provide a more complete YAML validation of a META.yml.
 
 Test-CPAN-Meta requires the Parse::CPAN::Meta module, which is now part of Perl
-Core as of perl-5.10.1. This version is intended to be used by those only 
+Core as of perl-5.10.1. This version is intended to be used by those only
 wishing to rely on core modules to test their META.yml files.
 
 Test-CPAN-Meta-JSON is the most recent addition to the family, and is specifically

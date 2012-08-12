@@ -39,7 +39,7 @@ my @tests = (
 for my $test (@tests) {
     my $yaml = LoadFile($test->{file});
 
-    my $spec = Test::CPAN::Meta::YAML::Version->new(spec => $vers, yaml => $yaml);
+    my $spec = Test::CPAN::Meta::YAML::Version->new(spec => $vers, data => $yaml);
 
     my $result = $spec->parse();
     my @errors = $spec->errors();
@@ -56,7 +56,7 @@ for my $test (@tests) {
 for my $test (@tests) {
     my $yaml = LoadFile($test->{file});
 
-    my $spec = Test::CPAN::Meta::YAML::Version->new(yaml => $yaml);
+    my $spec = Test::CPAN::Meta::YAML::Version->new(data => $yaml);
 
     my $result = $spec->parse();
     my @errors = $spec->errors();
