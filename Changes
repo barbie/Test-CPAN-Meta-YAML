@@ -2,6 +2,7 @@ Changes log for Test-CPAN-Meta-YAML
 ===================================
 
         - extended META test suite.
+        - added META.json and tests.
 
 0.22    2013-07-21
         - change file dates changed to meet W3CDTF standards.
