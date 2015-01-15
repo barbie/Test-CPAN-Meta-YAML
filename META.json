@@ -1,6 +1,6 @@
 {
     "name": "Test-CPAN-Meta-YAML",
-    "version": "0.22",
+    "version": "0.23",
     "abstract": "Validate your CPAN META.json files",
     "author": ["Barbie <barbie@cpan.org>"],
 
@@ -52,11 +52,11 @@
     "provides": {
         "Test::CPAN::Meta::YAML": {
             "file": "lib/Test/CPAN/Meta/YAML.pm",
-            "version": "0.22"
+            "version": "0.23"
         },
         "Test::CPAN::Meta::YAML::Version": {
             "file": "lib/Test/CPAN/Meta/YAML/Version.pm",
-            "version": "0.22"
+            "version": "0.23"
         }
     },
     "no_index": {

@@ -1,6 +1,7 @@
 Changes log for Test-CPAN-Meta-YAML
 ===================================
 
+0.23    2015-01-15
         - extended META test suite.
         - added META.json and tests.
 
