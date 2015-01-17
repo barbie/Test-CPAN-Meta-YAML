@@ -10,13 +10,13 @@ $VERSION = '0.23';
 
 =head1 NAME
 
-Test::CPAN::Meta::YAML - Validate a META.yml file within a CPAN distribution.
+Test::CPAN::Meta::YAML - Validate a F<META.yml> file within a CPAN distribution.
 
 =head1 SYNOPSIS
 
 There are two forms this module can be used.
 
-The first is a standalone test of your distribution's META.yml file:
+The first is a standalone test of your distribution's F<META.yml> file:
 
   use Test::More;
   eval "use Test::CPAN::Meta::YAML";
@@ -26,7 +26,7 @@ The first is a standalone test of your distribution's META.yml file:
 Note that you may provide an optional label/comment/message/etc to the
 function, or one will be created automatically.
 
-The second form allows you to test other META.yml files, or specify a specific
+The second form allows you to test other F<META.yml> files, or specify a specific
 version you wish to test against:
 
   use Test::More test => 6;
@@ -43,21 +43,17 @@ version you wish to test against:
   meta_spec_ok('META.yml',undef,$msg);
 
 Note that this form requires you to specify the number of tests you will be
-running in your test script. Also note that each 'meta_spec_ok' is actually 2
+running in your test script. Also note that each C<meta_spec_ok> is actually two
 tests under the hood.
 
 =head1 DESCRIPTION
 
-This module was written to ensure that a META.yml file, provided with a
+This module was written to ensure that a F<META.yml> file, provided with a
 standard distribution uploaded to CPAN, meets the specifications that slowly
 being introduced to module uploads, via the use of L<ExtUtils::MakeMaker>,
 L<Module::Build> and L<Module::Install>.
 
 See L<CPAN::Meta> for further details of the CPAN Meta Specification.
-
-=head1 ABSTRACT
-
-A test module to validate a META.yml file.
 
 =cut
 
@@ -96,7 +92,7 @@ sub import {
 
 =item * meta_yaml_ok([$msg])
 
-Basic META.yml wrapper around meta_spec_ok.
+Basic F<META.yml> wrapper around C<meta_spec_ok>.
 
 =cut
 
@@ -107,8 +103,8 @@ sub meta_yaml_ok {
 
 =item * meta_spec_ok($file, $version [,$msg])
 
-Validates the named file against the given specification version. Both $file
-and $version can be undefined.
+Validates the named file against the given specification version. Both C<$file>
+and C<$version> can be undefined.
 
 =back
 
@@ -151,26 +147,26 @@ __END__
 
 =head1 TESTING META FILES
 
-There are currently 3 distributions to test META files:
+There are currently three distributions to test META files:
 
-  Test-CPAN-Meta
-  Test-CPAN-Meta-JSON
-  Test-CPAN-Meta-YAML
+  L<Test-CPAN-Meta|Test::CPAN::Meta>
+  L<Test-CPAN-Meta-JSON|Test::CPAN::Meta::JSON>
+  L<Test-CPAN-Meta-YAML|Test::CPAN::Meta::YAML>
 
 All three have slightly different requirements and are intended to be used in
 slightly different environments.
 
-Test-CPAN-Meta-YAML requires a YAML parser, and currently looks for the YAML or
-YAML::Syck modules. This is the original variant of the 3 and was intended to
-provide a more complete YAML validation of a META.yml.
+L<Test-CPAN-Meta-YAML|Test::CPAN::Meta::YAML> requires a YAML parser, and currently looks for the L<YAML> or
+L<YAML::Syck> modules. This is the original variant of the three and was intended to
+provide a more complete YAML validation of a F<META.yml>.
 
-Test-CPAN-Meta requires the Parse::CPAN::Meta module, which is now part of Perl
+L<Test-CPAN-Meta|Test::CPAN::Meta> requires the L<Parse::CPAN::Meta> module, which is now part of Perl
 Core as of perl-5.10.1. This version is intended to be used by those only
-wishing to rely on core modules to test their META.yml files.
+wishing to rely on core modules to test their F<META.yml> files.
 
-Test-CPAN-Meta-JSON is the most recent addition to the family, and is specifically
-aimed at those distributions that use a META.json Meta file. The distribution
-requires the JSON module to parse the Meta file.
+L<Test-CPAN-Meta-JSON|Test::CPAN::Meta::JSON> is the most recent addition to the family, and is specifically
+aimed at those distributions that use a F<META.json> Meta file. The distribution
+requires the L<JSON> module to parse the Meta file.
 
 =head1 BUGS, PATCHES & FIXES
 
@@ -186,7 +182,10 @@ be forthcoming, please feel free to (politely) remind me.
 
 =head1 SEE ALSO
 
-  Test::YAML::Valid
+  L<Test::YAML::Valid>
+  L<Test::CPAN::Meta>
+  L<Test::CPAN::Meta::JSON>
+  L<Test::CPAN::Meta::YAML>
 
 =head1 AUTHOR
 
