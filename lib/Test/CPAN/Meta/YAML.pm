@@ -149,9 +149,15 @@ __END__
 
 There are currently three distributions to test META files:
 
-  L<Test-CPAN-Meta|Test::CPAN::Meta>
-  L<Test-CPAN-Meta-JSON|Test::CPAN::Meta::JSON>
-  L<Test-CPAN-Meta-YAML|Test::CPAN::Meta::YAML>
+=over 4
+
+=item L<Test-CPAN-Meta|Test::CPAN::Meta>
+
+=item L<Test-CPAN-Meta-JSON|Test::CPAN::Meta::JSON>
+
+=item L<Test-CPAN-Meta-YAML|Test::CPAN::Meta::YAML>
+
+=back
 
 All three have slightly different requirements and are intended to be used in
 slightly different environments.
@@ -182,10 +188,17 @@ be forthcoming, please feel free to (politely) remind me.
 
 =head1 SEE ALSO
 
-  L<Test::YAML::Valid>
-  L<Test::CPAN::Meta>
-  L<Test::CPAN::Meta::JSON>
-  L<Test::CPAN::Meta::YAML>
+=over 4
+
+=item L<Test::YAML::Valid>
+
+=item L<Test::CPAN::Meta>
+
+=item L<Test::CPAN::Meta::JSON>
+
+=item L<Test::CPAN::Meta::YAML>
+
+=back
 
 =head1 AUTHOR
 
