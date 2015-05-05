@@ -29,7 +29,7 @@ function, or one will be created automatically.
 The second form allows you to test other F<META.yml> files, or specify a specific
 version you wish to test against:
 
-  use Test::More test => 6;
+  use Test::More tests => 6;
   use Test::CPAN::Meta::YAML;
 
   # specify a file and specification version
