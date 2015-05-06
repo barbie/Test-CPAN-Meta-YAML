@@ -1,6 +1,9 @@
 Changes log for Test-CPAN-Meta-YAML
 ===================================
 
+0.25    2015-05-06
+        - POD fixes (by Olivier Mengué (DOLMEN)).
+
 0.24    2015-01-19
         - #386b81d - merged document updates from Karen Etheridge (ETHER).
 
